@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "ruberdoku"
+version = "0.0.1"
+description = ""
+authors = ["Tjark Sievers <tjarksievers@icloud.com>"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = ">=3.9"
+
+[tool.poetry.group.dev.dependencies]
+pre-commit = "^3.7.1"
+scriv = "^1.5.1"
+tox = "^4.15.0"
+black = "^24.4.2"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
