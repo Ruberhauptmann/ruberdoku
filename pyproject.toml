@@ -6,8 +6,12 @@ authors = ["Tjark Sievers <tjarksievers@icloud.com>"]
 license = "MIT"
 readme = "README.md"
 
+[tool.poetry.scripts]
+ruberdoku = "ruberdoku.cli:cli"
+
 [tool.poetry.dependencies]
 python = ">=3.9"
+click = "^8.1.7"
 
 [tool.poetry.group.dev.dependencies]
 pre-commit = "^3.7.1"
