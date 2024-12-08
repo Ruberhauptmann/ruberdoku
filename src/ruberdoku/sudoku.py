@@ -7,13 +7,16 @@ class Sudoku:
         return self._field
 
     @field.setter
-    def field(self, value):
+    def field(self, value: list[int]):
         self._field = value
 
     def __getitem__(self, idx):
         return self._field[idx]
 
     def __setitem__(self, idx, value):
+        if value not in list(range(9)):
+            print(f"Invalid value {value}")
+            raise ValueError
         self._field[idx] = value
 
     @staticmethod

@@ -35,3 +35,6 @@ lint = [
 type = [
     "mypy>=1.13.0",
 ]
+codspeed = [
+    "pytest-codspeed>=3.0.0",
+]
