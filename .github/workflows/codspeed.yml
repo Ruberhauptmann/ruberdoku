@@ -22,13 +22,13 @@ jobs:
       - name: Install tox
         run: uv tool install --python-preference only-managed --python 3.12 tox --with tox-uv --with tox-gh
       - name: Setup test suite
-        run: uv tool run tox run -e codspeed -vv --notest --skip-missing-interpreters false
+        run: tox run -e codspeed -vv --notest --skip-missing-interpreters false
         env:
           TOX_GH_MAJOR_MINOR: 3.12
       - name: Run benchmarks
         uses: CodSpeedHQ/action@v3
         with:
           token: ${{ secrets.CODSPEED_TOKEN }}
-          run: uv tool run tox run --skip-pkg-install -e codspeed
+          run: tox run --skip-pkg-install -e codspeed
         env:
           TOX_GH_MAJOR_MINOR: 3.12
