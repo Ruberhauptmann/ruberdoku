@@ -25,6 +25,6 @@ jobs:
         uses: CodSpeedHQ/action@v3
         with:
           token: ${{ secrets.CODSPEED_TOKEN }}
-          run: tox run -e codspeed
+          run: uv tool run tox run -e codspeed
         env:
           TOX_GH_MAJOR_MINOR: 3.12
