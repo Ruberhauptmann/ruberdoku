@@ -4,31 +4,17 @@
 3. Clear the output
 4. Display the menu again or exit if done is selected
 """
-import os
-import sys
-
 import click
 
-
-def display_menu(menu: list):
-    for index, (help_text, function) in enumerate(menu):
-        print(f"{index} -- {help_text}")
-
-
-def clear_screen():
-    os.system("cls" if os.name == "nt" else "clear")
+from ruberdoku.game_loop import game_loop
+from ruberdoku.menu import clear_screen, display_menu, done
+from ruberdoku.sudoku import Sudoku
 
 
 def load_file():
-    print("you have selected menu option one")
-    input("Press Enter to Continue\n")
+    sudoku = Sudoku()
+    game_loop(sudoku)
     clear_screen()
-
-
-def done():
-    clear_screen()
-    print("Goodbye")
-    sys.exit()
 
 
 def main():
